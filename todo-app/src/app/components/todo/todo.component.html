@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="todo-form">
+      <h2>Create a Todo</h2>
+      <input type="text" [(ngModel)]="title" placeholder="Enter task title" class="input">
+      <textarea [(ngModel)]="description" placeholder="Enter task description" class="textarea"></textarea>
+      <button (click)="addTodo()" class="btn">Add Todo</button>
+    </div>
+  
+    <div class="todo-list">
+      <h2>Previous Todos</h2>
+      <div *ngIf="todoService.todos().length === 0" class="empty-message">
+        No todos yet. Start by adding one!
+      </div>
+  
+      <div *ngFor="let todo of todoService.todos()" class="todo-item">
+        <div class="todo-content">
+          <h3>{{ todo.title }}</h3>
+          <p>{{ todo.description }}</p>
+        </div>
+        <button (click)="deleteTodo(todo.id)" class="delete-btn">✔ Done</button>
+      </div>
+    </div>
+  </div>
+  

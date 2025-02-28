@@ -1,0 +1,17 @@
+node_modules/
+npm-debug.log
+
+dist/
+build/
+
+.env
+
+docker-compose.override.yml
+*.log
+.dockerignore
+
+mysql-data/
+
+.vscode/
+.idea/
+.DS_Store
